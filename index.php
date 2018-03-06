@@ -1,38 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>title</title>
-    <style>
+<?php
 
-      header {
-        background: #e3e3e3;
-        padding: 2em;
-        text-align: center;
-      }
+//idea - create a madlibs using user input and variables. 
 
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>
-        <?php
+$inspirationalQuote = '"You don\'t have to be great at something to get started but you do have to get started in order to be great at something."';
+$quoteAuthor = 'Zig Ziglar';
 
-          //idea - create a madlibs using user input and variables. 
+$name = htmlspecialchars($_GET['name']);
 
-          $inspirationalQuote = '"You don\'t have to be great at something to get started but you do have to get started in order to be great at something."';
-          $quoteAuthor = 'Zig Ziglar';
+$greeting = 'Hello, ' . $name . '. Did you know that ' . $quoteAuthor . ' once said, ' . $inspirationalQuote;
 
-          $name = htmlspecialchars($_GET['name']);
+//"Hello, " . htmlspecialchars($_GET['name']) . "!";  //sanatizing our input using htmlspecialchars
 
-          echo 'Hello, ' . $name . '. Did you know that ' . $quoteAuthor . ' once said, ' . $inspirationalQuote;
-
-        ?>
-      </h1>
-
-      <!-- <h2>
-        <?= "Hello, " . htmlspecialchars($_GET['name']) . "!"; ?> //sanatizing our input using htmlspecialchars
-      </h2> -->
-    </header>
-  </body>
-</html>
+require 'index.view.php'; 
